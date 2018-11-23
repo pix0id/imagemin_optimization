@@ -4,7 +4,7 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const PNGImages = 'unoptimized/*.png';
 const JPEGImages = 'unoptimized/*.jpg';
-const output = 'build/images';
+const output = 'images';
 
 const optimisePNGImages = () =>
   imagemin([PNGImages], output, {
