@@ -6,10 +6,14 @@ const PNGImages = 'unoptimized/*.png';
 const JPEGImages = 'unoptimized/*.jpg';
 const output = 'images';
 
+// change quality for different image types here:
+const pngQuality = '65-80';
+const jpgQuality = 70;
+
 const optimisePNGImages = () =>
   imagemin([PNGImages], output, {
     plugins: [
-      imageminPngquant({ quality: '65-80' })
+      imageminPngquant({ quality: pngQuality })
     ],
   });
 
@@ -17,7 +21,7 @@ const optimiseJPEGImages = () =>
 	imagemin([JPEGImages], output, {
 	plugins: [
 	  imageminMozjpeg({
-	    quality: 70,
+	    quality: jpgQuality,
 	  }),
 	]
 	});
